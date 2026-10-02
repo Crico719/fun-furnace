@@ -20,9 +20,9 @@ export function Memory({ paused, onScore }: GameProps) {
 
   useEffect(() => {
     if (open.length !== 2) return;
-    const [a, b] = open;
+    const a = open[0]!, b = open[1]!;
     const t = setTimeout(() => {
-      if (cards[a].s === cards[b].s) setDone((d) => new Set([...d, a, b]));
+      if (cards[a]?.s === cards[b]?.s) setDone((d) => new Set([...d, a, b]));
       setOpen([]);
     }, 600);
     return () => clearTimeout(t);

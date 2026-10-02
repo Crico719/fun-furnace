@@ -41,7 +41,8 @@ export function Snake({ paused, onScore }: GameProps) {
     const t = setInterval(() => {
       setSnake((s) => {
         dir.current = next.current;
-        const head = { x: s[0].x + dir.current.x, y: s[0].y + dir.current.y };
+        const h0 = s[0]!;
+        const head = { x: h0.x + dir.current.x, y: h0.y + dir.current.y };
         if (head.x < 0 || head.y < 0 || head.x >= N || head.y >= N || s.some((p) => p.x === head.x && p.y === head.y)) {
           setOver(true);
           return s;
