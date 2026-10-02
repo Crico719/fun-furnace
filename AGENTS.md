@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Games live in src/games/<id>/ as components taking GameProps and are registered in src/games/registry.ts; GameHost provides pause/restart/fullscreen. Why: adding a game needs no host changes.
